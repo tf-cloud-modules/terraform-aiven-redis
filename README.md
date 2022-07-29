@@ -39,12 +39,20 @@ No modules.
 | <a name="input_project_vpc_id"></a> [project\_vpc\_id](#input\_project\_vpc\_id) | Specifies the VPC the service should run in. If the value is not set the service is not run inside a VPC. | `string` | `null` | no |
 | <a name="input_public_access_prometheus"></a> [public\_access\_prometheus](#input\_public\_access\_prometheus) | Allow clients to connect to prometheus from the public internet for service nodes that are in a project VPC or another type of private network. | `bool` | `false` | no |
 | <a name="input_public_access_redis"></a> [public\_access\_redis](#input\_public\_access\_redis) | Allow clients to connect to redis from the public internet for service nodes that are in a project VPC or another type of private network. | `bool` | `false` | no |
-| <a name="input_redis_lfu_decay_time"></a> [redis\_lfu\_decay\_time](#input\_redis\_lfu\_decay\_time) | LFU maxmemory-policy counter decay time in minutes | `string` | `"1"` | no |
-| <a name="input_redis_lfu_log_factor"></a> [redis\_lfu\_log\_factor](#input\_redis\_lfu\_log\_factor) | Counter logarithm factor for volatile-lfu and allkeys-lfu maxmemory-policies | `string` | `"10"` | no |
+| <a name="input_recovery_basebackup_name"></a> [recovery\_basebackup\_name](#input\_recovery\_basebackup\_name) | Name of the basebackup to restore in forked service. | `string` | `""` | no |
+| <a name="input_redis_acl_channels_default"></a> [redis\_acl\_channels\_default](#input\_redis\_acl\_channels\_default) | Default ACL for pub/sub channels used when Redis user is created. | `string` | `""` | no |
+| <a name="input_redis_io_threads"></a> [redis\_io\_threads](#input\_redis\_io\_threads) | Redis IO thread count. | `string` | `""` | no |
+| <a name="input_redis_lfu_decay_time"></a> [redis\_lfu\_decay\_time](#input\_redis\_lfu\_decay\_time) | LFU maxmemory-policy counter decay time in minutes. | `string` | `"1"` | no |
+| <a name="input_redis_lfu_log_factor"></a> [redis\_lfu\_log\_factor](#input\_redis\_lfu\_log\_factor) | Counter logarithm factor for volatile-lfu and allkeys-lfu maxmemory-policies. | `string` | `"10"` | no |
 | <a name="input_redis_maxmemory_policy"></a> [redis\_maxmemory\_policy](#input\_redis\_maxmemory\_policy) | Redis maxmemory-policy. | `string` | `"volatile-ttl"` | no |
+| <a name="input_redis_notify_keyspace_events"></a> [redis\_notify\_keyspace\_events](#input\_redis\_notify\_keyspace\_events) | Set notify-keyspace-events option. | `string` | `""` | no |
+| <a name="input_redis_number_of_databases"></a> [redis\_number\_of\_databases](#input\_redis\_number\_of\_databases) | Number of redis databases. | `string` | `""` | no |
+| <a name="input_redis_persistence"></a> [redis\_persistence](#input\_redis\_persistence) | Redis persistence. | `string` | `""` | no |
+| <a name="input_redis_pubsub_client_output_buffer_limit"></a> [redis\_pubsub\_client\_output\_buffer\_limit](#input\_redis\_pubsub\_client\_output\_buffer\_limit) | Pub/sub client output buffer hard limit in MB. | `string` | `""` | no |
 | <a name="input_redis_ssl"></a> [redis\_ssl](#input\_redis\_ssl) | Enable Redis SSL. | `bool` | `false` | no |
 | <a name="input_redis_timeout"></a> [redis\_timeout](#input\_redis\_timeout) | Redis idle connection timeout. | `string` | `"0"` | no |
 | <a name="input_service_name"></a> [service\_name](#input\_service\_name) | Specifies the actual name of the service. | `string` | n/a | yes |
+| <a name="input_service_to_fork_from"></a> [service\_to\_fork\_from](#input\_service\_to\_fork\_from) | Name of another service to fork from. | `string` | `""` | no |
 | <a name="input_static_ips"></a> [static\_ips](#input\_static\_ips) | Static IPs that are going to be associated with this service. | `list(string)` | `[]` | no |
 | <a name="input_termination_protection"></a> [termination\_protection](#input\_termination\_protection) | Prevents the service from being deleted. | `bool` | `false` | no |
 

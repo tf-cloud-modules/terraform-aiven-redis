@@ -57,14 +57,32 @@ variable "public_access_redis" {
   default     = false
 }
 
+variable "recovery_basebackup_name" {
+  description = "Name of the basebackup to restore in forked service."
+  type        = string
+  default     = ""
+}
+
+variable "redis_acl_channels_default" {
+  description = "Default ACL for pub/sub channels used when Redis user is created."
+  type        = string
+  default     = ""
+}
+
+variable "redis_io_threads" {
+  description = "Redis IO thread count."
+  type        = string
+  default     = ""
+}
+
 variable "redis_lfu_decay_time" {
-  description = "LFU maxmemory-policy counter decay time in minutes"
+  description = "LFU maxmemory-policy counter decay time in minutes."
   type        = string
   default     = "1"
 }
 
 variable "redis_lfu_log_factor" {
-  description = "Counter logarithm factor for volatile-lfu and allkeys-lfu maxmemory-policies"
+  description = "Counter logarithm factor for volatile-lfu and allkeys-lfu maxmemory-policies."
   type        = string
   default     = "10"
 }
@@ -73,6 +91,30 @@ variable "redis_maxmemory_policy" {
   description = "Redis maxmemory-policy."
   type        = string
   default     = "volatile-ttl"
+}
+
+variable "redis_notify_keyspace_events" {
+  description = "Set notify-keyspace-events option."
+  type        = string
+  default     = ""
+}
+
+variable "redis_number_of_databases" {
+  description = "Number of redis databases."
+  type        = string
+  default     = ""
+}
+
+variable "redis_persistence" {
+  description = "Redis persistence."
+  type        = string
+  default     = ""
+}
+
+variable "redis_pubsub_client_output_buffer_limit" {
+  description = "Pub/sub client output buffer hard limit in MB."
+  type        = string
+  default     = ""
 }
 
 variable "redis_ssl" {
@@ -85,6 +127,12 @@ variable "redis_timeout" {
   description = "Redis idle connection timeout."
   type        = string
   default     = "0"
+}
+
+variable "service_to_fork_from" {
+  description = "Name of another service to fork from."
+  type        = string
+  default     = ""
 }
 
 variable "static_ips" {

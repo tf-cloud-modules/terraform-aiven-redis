@@ -76,7 +76,7 @@ output "service_type" {
 
 output "service_uri" {
   description = "URI for connecting to the service."
-  sensitive = true
+  sensitive   = true
   value       = try(aiven_redis.this[0].service_uri, "")
 }
 
