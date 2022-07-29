@@ -45,6 +45,7 @@ output "redis" {
 
 output "redis_user_config" {
   description = "Redis user configurable settings."
+  sensitive   = true
   value       = try(aiven_redis.this[0].redis_user_config, "")
 }
 

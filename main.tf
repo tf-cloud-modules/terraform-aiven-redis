@@ -13,6 +13,17 @@ resource "aiven_redis" "this" {
   redis_user_config {
     ip_filter = var.ip_filter
 
+    migration {
+      dbname     = var.migration_dbname
+      host       = var.migration_host
+      ignore_dbs = var.migration_ignore_dbs
+      method     = var.migration_method
+      password   = var.migration_password
+      port       = var.migration_port
+      ssl        = var.migration_ssl
+      username   = var.migration_username
+    }
+
     public_access {
       prometheus = var.public_access_prometheus
       redis      = var.public_access_redis
@@ -32,4 +43,10 @@ resource "aiven_redis" "this" {
     redis_timeout                           = var.redis_timeout
     service_to_fork_from                    = var.service_to_fork_from
   }
+
+  lifecycle {
+    # We are ignoring a migration block to it's one-off nature.
+    ignore_changes = [redis_user_config["migration"]]
+  }
+
 }

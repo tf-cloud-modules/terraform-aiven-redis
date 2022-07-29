@@ -34,6 +34,14 @@ No modules.
 | <a name="input_ip_filter"></a> [ip\_filter](#input\_ip\_filter) | IP filter. | `list(string)` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
 | <a name="input_maintenance_window_dow"></a> [maintenance\_window\_dow](#input\_maintenance\_window\_dow) | Day of week when maintenance operations should be performed. One monday, tuesday, wednesday, etc. | `string` | `"thursday"` | no |
 | <a name="input_maintenance_window_time"></a> [maintenance\_window\_time](#input\_maintenance\_window\_time) | Time of day when maintenance operations should be performed. UTC time in HH:mm:ss format. | `string` | `"01:00:00"` | no |
+| <a name="input_migration_dbname"></a> [migration\_dbname](#input\_migration\_dbname) | Database name for bootstrapping the initial connection. | `string` | `""` | no |
+| <a name="input_migration_host"></a> [migration\_host](#input\_migration\_host) | Hostname or IP address of the server where to migrate data from. | `string` | `""` | no |
+| <a name="input_migration_ignore_dbs"></a> [migration\_ignore\_dbs](#input\_migration\_ignore\_dbs) | Comma-separated list of databases, which should be ignored during migration. | `string` | `""` | no |
+| <a name="input_migration_method"></a> [migration\_method](#input\_migration\_method) | The migration method to be used. | `string` | `""` | no |
+| <a name="input_migration_password"></a> [migration\_password](#input\_migration\_password) | Password for authentication with the server where to migrate data from. | `string` | `""` | no |
+| <a name="input_migration_port"></a> [migration\_port](#input\_migration\_port) | Port number of the server where to migrate data from. | `string` | `""` | no |
+| <a name="input_migration_ssl"></a> [migration\_ssl](#input\_migration\_ssl) | The server where to migrate data from is secured with SSL. | `string` | `""` | no |
+| <a name="input_migration_username"></a> [migration\_username](#input\_migration\_username) | User name for authentication with the server where to migrate data. | `string` | `""` | no |
 | <a name="input_plan"></a> [plan](#input\_plan) | Defines what kind of computing resources are allocated for the service. | `string` | `"hobbyist"` | no |
 | <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name | `string` | n/a | yes |
 | <a name="input_project_vpc_id"></a> [project\_vpc\_id](#input\_project\_vpc\_id) | Specifies the VPC the service should run in. If the value is not set the service is not run inside a VPC. | `string` | `null` | no |
