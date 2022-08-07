@@ -41,12 +41,12 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | The ID of this resource. |
-| <a name="output_password"></a> [password](#output\_password) | n/a |
-| <a name="output_project"></a> [project](#output\_project) | n/a |
-| <a name="output_redis_acl_categories"></a> [redis\_acl\_categories](#output\_redis\_acl\_categories) | n/a |
-| <a name="output_redis_acl_channels"></a> [redis\_acl\_channels](#output\_redis\_acl\_channels) | n/a |
-| <a name="output_redis_acl_commands"></a> [redis\_acl\_commands](#output\_redis\_acl\_commands) | n/a |
-| <a name="output_redis_acl_keys"></a> [redis\_acl\_keys](#output\_redis\_acl\_keys) | n/a |
-| <a name="output_service_name"></a> [service\_name](#output\_service\_name) | n/a |
-| <a name="output_username"></a> [username](#output\_username) | n/a |
+| <a name="output_password"></a> [password](#output\_password) | The password of the Redis User. |
+| <a name="output_project"></a> [project](#output\_project) | Identifies the project this resource belongs to. |
+| <a name="output_redis_acl_categories"></a> [redis\_acl\_categories](#output\_redis\_acl\_categories) | Defines command category rules. |
+| <a name="output_redis_acl_channels"></a> [redis\_acl\_channels](#output\_redis\_acl\_channels) | Defines the permitted pub/sub channel patterns. |
+| <a name="output_redis_acl_commands"></a> [redis\_acl\_commands](#output\_redis\_acl\_commands) | Defines rules for individual commands. |
+| <a name="output_redis_acl_keys"></a> [redis\_acl\_keys](#output\_redis\_acl\_keys) | Defines key access rules. |
+| <a name="output_service_name"></a> [service\_name](#output\_service\_name) | Specifies the name of the service that this resource belongs to. |
+| <a name="output_username"></a> [username](#output\_username) | The actual name of the Redis User. |
 <!-- END_TF_DOCS -->
