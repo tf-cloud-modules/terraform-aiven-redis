@@ -11,5 +11,5 @@ This document describes the current status of this project.
 | ✔ | [Add redis_user_config.privatelink_access section]() ||
 | ✔ | [Add redis_user_config.public_access section]() ||
 | ✔ | [Add service_integrations section]() ||
-| ❌ | [Add tag section]() |`in progress`|
+| ✔ | [Add tag section]() ||
 | ✔ | [Add examples]() ||
