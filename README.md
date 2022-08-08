@@ -57,6 +57,8 @@ No modules.
 | <a name="input_plan"></a> [plan](#input\_plan) | Defines what kind of computing resources are allocated for the service. | `string` | `"hobbyist"` | no |
 | <a name="input_private_access_prometheus"></a> [private\_access\_prometheus](#input\_private\_access\_prometheus) | Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses. | `bool` | `false` | no |
 | <a name="input_private_access_redis"></a> [private\_access\_redis](#input\_private\_access\_redis) | Allow clients to connect to redis with a DNS name that always resolves to the service's private IP addresses. | `bool` | `false` | no |
+| <a name="input_privatelink_access_prometheus"></a> [privatelink\_access\_prometheus](#input\_privatelink\_access\_prometheus) | Enable prometheus. | `bool` | `false` | no |
+| <a name="input_privatelink_access_redis"></a> [privatelink\_access\_redis](#input\_privatelink\_access\_redis) | Enable redis. | `bool` | `false` | no |
 | <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name | `string` | n/a | yes |
 | <a name="input_project_vpc_id"></a> [project\_vpc\_id](#input\_project\_vpc\_id) | Specifies the VPC the service should run in. If the value is not set the service is not run inside a VPC. | `string` | `null` | no |
 | <a name="input_public_access_prometheus"></a> [public\_access\_prometheus](#input\_public\_access\_prometheus) | Allow clients to connect to prometheus from the public internet for service nodes that are in a project VPC or another type of private network. | `bool` | `false` | no |
