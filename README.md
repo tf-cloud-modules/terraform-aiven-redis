@@ -75,6 +75,7 @@ No modules.
 | <a name="input_redis_pubsub_client_output_buffer_limit"></a> [redis\_pubsub\_client\_output\_buffer\_limit](#input\_redis\_pubsub\_client\_output\_buffer\_limit) | Pub/sub client output buffer hard limit in MB. | `string` | `""` | no |
 | <a name="input_redis_ssl"></a> [redis\_ssl](#input\_redis\_ssl) | Enable Redis SSL. | `bool` | `false` | no |
 | <a name="input_redis_timeout"></a> [redis\_timeout](#input\_redis\_timeout) | Redis idle connection timeout. | `string` | `"0"` | no |
+| <a name="input_service_integrations"></a> [service\_integrations](#input\_service\_integrations) | List of the service integrations. | `list(any)` | `[]` | no |
 | <a name="input_service_name"></a> [service\_name](#input\_service\_name) | Specifies the actual name of the service. | `string` | n/a | yes |
 | <a name="input_service_to_fork_from"></a> [service\_to\_fork\_from](#input\_service\_to\_fork\_from) | Name of another service to fork from. | `string` | `""` | no |
 | <a name="input_static_ips"></a> [static\_ips](#input\_static\_ips) | Static IPs that are going to be associated with this service. | `list(string)` | `[]` | no |
