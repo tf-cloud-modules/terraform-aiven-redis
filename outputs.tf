@@ -33,9 +33,9 @@ output "plan" {
   value       = try(aiven_redis.this[0].plan, "")
 }
 
-output "project_vpc_id" {
-  description = "Specifies the VPC the service should run in. If the value is not set the service is not run inside a VPC."
-  value       = try(aiven_redis.this[0].project_vpc_id, "")
+output "project" {
+  description = "Aiven Cloud Project Name."
+  value       = try(aiven_redis.this[0].project, "")
 }
 
 output "redis" {
@@ -57,6 +57,11 @@ output "service_host" {
 output "service_integrations" {
   description = "Service integrations to specify when creating a service."
   value       = try(aiven_redis.this[0].service_integrations, "")
+}
+
+output "service_name" {
+  description = "Specifies the actual name of the service."
+  value       = try(aiven_redis.this[0].service_name, "")
 }
 
 output "service_password" {

@@ -1,5 +1,17 @@
-# terraform-aiven-redis
-Aiven Redis Terraform module
+# Aiven Redis Terraform module
+
+Terraform module which creates Aiven Redis resources
+
+## Usage
+
+```hcl
+module "redis" {
+  source       = "tf-cloud-modules/redis/aiven"
+  project      = "test"
+  service_name = "test"
+}
+```
+
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -7,7 +19,7 @@ Aiven Redis Terraform module
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 2.0.0, < 3.0.0 |
+| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 3.0.0 |
 
 ## Providers
 
@@ -75,11 +87,12 @@ No modules.
 | <a name="output_maintenance_window_dow"></a> [maintenance\_window\_dow](#output\_maintenance\_window\_dow) | Day of week when maintenance operations should be performed. |
 | <a name="output_maintenance_window_time"></a> [maintenance\_window\_time](#output\_maintenance\_window\_time) | Time of day when maintenance operations should be performed. |
 | <a name="output_plan"></a> [plan](#output\_plan) | Defines what kind of computing resources are allocated for the service. |
-| <a name="output_project_vpc_id"></a> [project\_vpc\_id](#output\_project\_vpc\_id) | Specifies the VPC the service should run in. If the value is not set the service is not run inside a VPC. |
+| <a name="output_project"></a> [project](#output\_project) | Aiven Cloud Project Name. |
 | <a name="output_redis"></a> [redis](#output\_redis) | Redis server provided values. |
 | <a name="output_redis_user_config"></a> [redis\_user\_config](#output\_redis\_user\_config) | Redis user configurable settings. |
 | <a name="output_service_host"></a> [service\_host](#output\_service\_host) | The hostname of the service. |
 | <a name="output_service_integrations"></a> [service\_integrations](#output\_service\_integrations) | Service integrations to specify when creating a service. |
+| <a name="output_service_name"></a> [service\_name](#output\_service\_name) | Specifies the actual name of the service. |
 | <a name="output_service_password"></a> [service\_password](#output\_service\_password) | Password used for connecting to the service, if applicable. |
 | <a name="output_service_port"></a> [service\_port](#output\_service\_port) | The port of the service. |
 | <a name="output_service_type"></a> [service\_type](#output\_service\_type) | Aiven internal service type code. |

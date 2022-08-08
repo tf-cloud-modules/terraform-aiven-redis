@@ -11,7 +11,7 @@ variable "password" {
 }
 
 variable "project" {
-  description = "Aiven Cloud Project Name"
+  description = "Aiven Cloud Project Name."
   type        = string
 }
 
