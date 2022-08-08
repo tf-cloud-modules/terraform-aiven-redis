@@ -95,6 +95,18 @@ variable "private_access_redis" {
   default     = false
 }
 
+variable "privatelink_access_prometheus" {
+  description = "Enable prometheus."
+  type        = bool
+  default     = false
+}
+
+variable "privatelink_access_redis" {
+  description = "Enable redis."
+  type        = bool
+  default     = false
+}
+
 variable "project" {
   description = "Aiven Cloud Project Name"
   type        = string
