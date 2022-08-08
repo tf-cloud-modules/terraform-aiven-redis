@@ -219,6 +219,12 @@ variable "service_name" {
   type        = string
 }
 
+variable "service_integrations" {
+  description = "List of the service integrations."
+  type        = list(any)
+  default     = []
+}
+
 variable "termination_protection" {
   description = "Prevents the service from being deleted."
   type        = bool
