@@ -29,6 +29,11 @@ resource "aiven_redis" "this" {
       redis      = var.public_access_redis
     }
 
+    private_access {
+      prometheus = var.private_access_prometheus
+      redis      = var.private_access_redis
+    }
+
     recovery_basebackup_name                = var.recovery_basebackup_name
     redis_acl_channels_default              = var.redis_acl_channels_default
     redis_io_threads                        = var.redis_io_threads

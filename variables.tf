@@ -83,6 +83,18 @@ variable "plan" {
   default     = "hobbyist"
 }
 
+variable "private_access_prometheus" {
+  description = "Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses."
+  type        = bool
+  default     = false
+}
+
+variable "private_access_redis" {
+  description = "Allow clients to connect to redis with a DNS name that always resolves to the service's private IP addresses."
+  type        = bool
+  default     = false
+}
+
 variable "project" {
   description = "Aiven Cloud Project Name"
   type        = string
