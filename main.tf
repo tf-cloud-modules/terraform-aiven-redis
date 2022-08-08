@@ -62,6 +62,14 @@ resource "aiven_redis" "this" {
     }
   }
 
+  dynamic "tag" {
+    for_each = var.tags
+    content {
+      key   = lookup(service_integrations.value, "key", null)
+      value = lookup(service_integrations.value, "value", null)
+    }
+  }
+
   lifecycle {
     # We are ignoring a migration block to it's one-off nature.
     ignore_changes = [redis_user_config["migration"]]

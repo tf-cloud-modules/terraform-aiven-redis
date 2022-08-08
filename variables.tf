@@ -225,6 +225,12 @@ variable "service_integrations" {
   default     = []
 }
 
+variable "tags" {
+  description = "List of the service tags."
+  type        = list(any)
+  default     = []
+}
+
 variable "termination_protection" {
   description = "Prevents the service from being deleted."
   type        = bool
