@@ -25,7 +25,7 @@ module "redis" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 2.7.3 |
+| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 3.4.0 |
 
 ## Modules
 
@@ -55,6 +55,8 @@ No modules.
 | <a name="input_migration_ssl"></a> [migration\_ssl](#input\_migration\_ssl) | The server where to migrate data from is secured with SSL. | `string` | `""` | no |
 | <a name="input_migration_username"></a> [migration\_username](#input\_migration\_username) | User name for authentication with the server where to migrate data. | `string` | `""` | no |
 | <a name="input_plan"></a> [plan](#input\_plan) | Defines what kind of computing resources are allocated for the service. | `string` | `"hobbyist"` | no |
+| <a name="input_private_access_prometheus"></a> [private\_access\_prometheus](#input\_private\_access\_prometheus) | Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses. | `bool` | `false` | no |
+| <a name="input_private_access_redis"></a> [private\_access\_redis](#input\_private\_access\_redis) | Allow clients to connect to redis with a DNS name that always resolves to the service's private IP addresses. | `bool` | `false` | no |
 | <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name | `string` | n/a | yes |
 | <a name="input_project_vpc_id"></a> [project\_vpc\_id](#input\_project\_vpc\_id) | Specifies the VPC the service should run in. If the value is not set the service is not run inside a VPC. | `string` | `null` | no |
 | <a name="input_public_access_prometheus"></a> [public\_access\_prometheus](#input\_public\_access\_prometheus) | Allow clients to connect to prometheus from the public internet for service nodes that are in a project VPC or another type of private network. | `bool` | `false` | no |
