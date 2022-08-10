@@ -4,13 +4,12 @@
 
 ```hcl
 module "redis_user" {
-  source       = "tf-cloud-modules/redis/aiven"
+  source  = "tf-cloud-modules/redis/aiven//modules/user"
   project      = "test"
   service_name = "test"
   username     = "test"
   password     = "changeM3!!!"
 }
-
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
