@@ -43,10 +43,7 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_password"></a> [password](#input\_password) | The password of the Redis User. | `string` | n/a | yes |
-| <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name | `string` | n/a | yes |
-| <a name="input_service_name"></a> [service\_name](#input\_service\_name) | Specifies the actual name of the service. | `string` | n/a | yes |
-| <a name="input_username"></a> [username](#input\_username) | The actual name of the Redis User. | `string` | n/a | yes |
+| <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name. | `string` | n/a | yes |
 
 ## Outputs
 
