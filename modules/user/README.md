@@ -8,7 +8,6 @@ module "redis_user" {
   project      = "test"
   service_name = "test"
   username     = "test"
-  password     = "changeM3!!!"
 }
 
 <!-- BEGIN_TF_DOCS -->
@@ -40,7 +39,6 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_create"></a> [create](#input\_create) | Controls if resources should be created. | `bool` | `true` | no |
-| <a name="input_password"></a> [password](#input\_password) | The password of the Redis User. | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name. | `string` | n/a | yes |
 | <a name="input_redis_acl_categories"></a> [redis\_acl\_categories](#input\_redis\_acl\_categories) | Defines command category rules. | `list(string)` | `[]` | no |
 | <a name="input_redis_acl_channels"></a> [redis\_acl\_channels](#input\_redis\_acl\_channels) | Defines the permitted pub/sub channel patterns. | `list(string)` | <pre>[<br>  "*"<br>]</pre> | no |

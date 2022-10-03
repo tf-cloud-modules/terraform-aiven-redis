@@ -4,12 +4,6 @@ variable "create" {
   default     = true
 }
 
-variable "password" {
-  description = "The password of the Redis User."
-  sensitive   = true
-  type        = string
-}
-
 variable "project" {
   description = "Aiven Cloud Project Name."
   type        = string
