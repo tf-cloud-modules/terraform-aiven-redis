@@ -19,7 +19,7 @@ module "redis" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 3.0.0, < 4.0.0 |
+| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.0.0, < 5.0.0 |
 
 ## Providers
 
@@ -43,17 +43,10 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_cloud_name"></a> [cloud\_name](#input\_cloud\_name) | Defines where the cloud provider and region where the service is hosted in. | `string` | `"aws-us-east-1"` | no |
 | <a name="input_create"></a> [create](#input\_create) | Controls if resources should be created. | `bool` | `true` | no |
-| <a name="input_ip_filter"></a> [ip\_filter](#input\_ip\_filter) | IP filter. | `list(string)` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
+| <a name="input_ip_filter_object"></a> [ip\_filter\_object](#input\_ip\_filter\_object) | Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'. | `list(any)` | <pre>[<br>  {<br>    "network": "0.0.0.0/0"<br>  }<br>]</pre> | no |
 | <a name="input_maintenance_window_dow"></a> [maintenance\_window\_dow](#input\_maintenance\_window\_dow) | Day of week when maintenance operations should be performed. One monday, tuesday, wednesday, etc. | `string` | `"thursday"` | no |
 | <a name="input_maintenance_window_time"></a> [maintenance\_window\_time](#input\_maintenance\_window\_time) | Time of day when maintenance operations should be performed. UTC time in HH:mm:ss format. | `string` | `"01:00:00"` | no |
-| <a name="input_migration_dbname"></a> [migration\_dbname](#input\_migration\_dbname) | Database name for bootstrapping the initial connection. | `string` | `""` | no |
-| <a name="input_migration_host"></a> [migration\_host](#input\_migration\_host) | Hostname or IP address of the server where to migrate data from. | `string` | `""` | no |
-| <a name="input_migration_ignore_dbs"></a> [migration\_ignore\_dbs](#input\_migration\_ignore\_dbs) | Comma-separated list of databases, which should be ignored during migration. | `string` | `""` | no |
-| <a name="input_migration_method"></a> [migration\_method](#input\_migration\_method) | The migration method to be used. | `string` | `""` | no |
-| <a name="input_migration_password"></a> [migration\_password](#input\_migration\_password) | Password for authentication with the server where to migrate data from. | `string` | `""` | no |
-| <a name="input_migration_port"></a> [migration\_port](#input\_migration\_port) | Port number of the server where to migrate data from. | `string` | `""` | no |
-| <a name="input_migration_ssl"></a> [migration\_ssl](#input\_migration\_ssl) | The server where to migrate data from is secured with SSL. | `string` | `""` | no |
-| <a name="input_migration_username"></a> [migration\_username](#input\_migration\_username) | User name for authentication with the server where to migrate data. | `string` | `""` | no |
+| <a name="input_migration"></a> [migration](#input\_migration) | Migrate data from existing server. | `list(any)` | `[]` | no |
 | <a name="input_plan"></a> [plan](#input\_plan) | Defines what kind of computing resources are allocated for the service. | `string` | `"hobbyist"` | no |
 | <a name="input_private_access_prometheus"></a> [private\_access\_prometheus](#input\_private\_access\_prometheus) | Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses. | `bool` | `false` | no |
 | <a name="input_private_access_redis"></a> [private\_access\_redis](#input\_private\_access\_redis) | Allow clients to connect to redis with a DNS name that always resolves to the service's private IP addresses. | `bool` | `false` | no |
@@ -65,14 +58,14 @@ No modules.
 | <a name="input_public_access_redis"></a> [public\_access\_redis](#input\_public\_access\_redis) | Allow clients to connect to redis from the public internet for service nodes that are in a project VPC or another type of private network. | `bool` | `false` | no |
 | <a name="input_recovery_basebackup_name"></a> [recovery\_basebackup\_name](#input\_recovery\_basebackup\_name) | Name of the basebackup to restore in forked service. | `string` | `""` | no |
 | <a name="input_redis_acl_channels_default"></a> [redis\_acl\_channels\_default](#input\_redis\_acl\_channels\_default) | Default ACL for pub/sub channels used when Redis user is created. | `string` | `""` | no |
-| <a name="input_redis_io_threads"></a> [redis\_io\_threads](#input\_redis\_io\_threads) | Redis IO thread count. | `string` | `""` | no |
+| <a name="input_redis_io_threads"></a> [redis\_io\_threads](#input\_redis\_io\_threads) | Redis IO thread count. | `number` | `null` | no |
 | <a name="input_redis_lfu_decay_time"></a> [redis\_lfu\_decay\_time](#input\_redis\_lfu\_decay\_time) | LFU maxmemory-policy counter decay time in minutes. | `string` | `"1"` | no |
 | <a name="input_redis_lfu_log_factor"></a> [redis\_lfu\_log\_factor](#input\_redis\_lfu\_log\_factor) | Counter logarithm factor for volatile-lfu and allkeys-lfu maxmemory-policies. | `string` | `"10"` | no |
 | <a name="input_redis_maxmemory_policy"></a> [redis\_maxmemory\_policy](#input\_redis\_maxmemory\_policy) | Redis maxmemory-policy. | `string` | `"volatile-ttl"` | no |
 | <a name="input_redis_notify_keyspace_events"></a> [redis\_notify\_keyspace\_events](#input\_redis\_notify\_keyspace\_events) | Set notify-keyspace-events option. | `string` | `""` | no |
-| <a name="input_redis_number_of_databases"></a> [redis\_number\_of\_databases](#input\_redis\_number\_of\_databases) | Number of redis databases. | `string` | `""` | no |
+| <a name="input_redis_number_of_databases"></a> [redis\_number\_of\_databases](#input\_redis\_number\_of\_databases) | Number of redis databases. | `number` | `null` | no |
 | <a name="input_redis_persistence"></a> [redis\_persistence](#input\_redis\_persistence) | Redis persistence. | `string` | `""` | no |
-| <a name="input_redis_pubsub_client_output_buffer_limit"></a> [redis\_pubsub\_client\_output\_buffer\_limit](#input\_redis\_pubsub\_client\_output\_buffer\_limit) | Pub/sub client output buffer hard limit in MB. | `string` | `""` | no |
+| <a name="input_redis_pubsub_client_output_buffer_limit"></a> [redis\_pubsub\_client\_output\_buffer\_limit](#input\_redis\_pubsub\_client\_output\_buffer\_limit) | Pub/sub client output buffer hard limit in MB. | `number` | `null` | no |
 | <a name="input_redis_ssl"></a> [redis\_ssl](#input\_redis\_ssl) | Enable Redis SSL. | `bool` | `false` | no |
 | <a name="input_redis_timeout"></a> [redis\_timeout](#input\_redis\_timeout) | Redis idle connection timeout. | `string` | `"0"` | no |
 | <a name="input_service_integrations"></a> [service\_integrations](#input\_service\_integrations) | List of the service integrations. | `list(any)` | `[]` | no |

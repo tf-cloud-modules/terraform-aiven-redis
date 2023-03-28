@@ -1,6 +1,3 @@
-provider "aiven" {
-}
-
 module "redis" {
   source       = "../.."
   project      = var.project

@@ -11,17 +11,13 @@ resource "aiven_redis" "this" {
   termination_protection  = var.termination_protection
 
   redis_user_config {
-    ip_filter = var.ip_filter
 
-    migration {
-      dbname     = var.migration_dbname
-      host       = var.migration_host
-      ignore_dbs = var.migration_ignore_dbs
-      method     = var.migration_method
-      password   = var.migration_password
-      port       = var.migration_port
-      ssl        = var.migration_ssl
-      username   = var.migration_username
+    dynamic "ip_filter_object" {
+      for_each = var.ip_filter_object
+      content {
+        network     = lookup(ip_filter_object.value, "network")
+        description = lookup(ip_filter_object.value, "description", null)
+      }
     }
 
     public_access {
