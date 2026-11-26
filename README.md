@@ -2,6 +2,10 @@
 
 Terraform module which creates Aiven Redis resources
 
+> **Deprecated:** This is the final release of this module. Aiven provider 4.56.0 removes the `aiven_redis` and `aiven_redis_user` resources, so this module is constrained to provider versions `>= 4.55.2, < 4.56.0`. It will receive no further updates. There is no Redis-to-Valkey migration in this module; moving to Valkey requires a separate migration plan and may require state and configuration changes.
+
+For existing deployments, keep using a compatible Aiven provider version. Do not upgrade this module's provider constraint to `4.56.0` or later.
+
 ## Usage
 
 ```hcl
@@ -17,15 +21,15 @@ module "redis" {
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.0.0, < 5.0.0 |
+| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.55.2, < 4.56.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
-| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 3.4.0 |
+| ---- | ------- |
+| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 4.55.2 |
 
 ## Modules
 
@@ -34,16 +38,16 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aiven_redis.this](https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/redis) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_cloud_name"></a> [cloud\_name](#input\_cloud\_name) | Defines where the cloud provider and region where the service is hosted in. | `string` | `"aws-us-east-1"` | no |
 | <a name="input_create"></a> [create](#input\_create) | Controls if resources should be created. | `bool` | `true` | no |
-| <a name="input_ip_filter_object"></a> [ip\_filter\_object](#input\_ip\_filter\_object) | Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'. | `list(any)` | <pre>[<br>  {<br>    "network": "0.0.0.0/0"<br>  }<br>]</pre> | no |
+| <a name="input_ip_filter_object"></a> [ip\_filter\_object](#input\_ip\_filter\_object) | Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'. | `list(any)` | <pre>[<br/>  {<br/>    "network": "0.0.0.0/0"<br/>  }<br/>]</pre> | no |
 | <a name="input_maintenance_window_dow"></a> [maintenance\_window\_dow](#input\_maintenance\_window\_dow) | Day of week when maintenance operations should be performed. One monday, tuesday, wednesday, etc. | `string` | `"thursday"` | no |
 | <a name="input_maintenance_window_time"></a> [maintenance\_window\_time](#input\_maintenance\_window\_time) | Time of day when maintenance operations should be performed. UTC time in HH:mm:ss format. | `string` | `"01:00:00"` | no |
 | <a name="input_migration"></a> [migration](#input\_migration) | Migrate data from existing server. | `list(any)` | `[]` | no |
@@ -78,7 +82,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_cloud_name"></a> [cloud\_name](#output\_cloud\_name) | Defines where the cloud provider and region where the service is hosted in. |
 | <a name="output_components"></a> [components](#output\_components) | Service component information objects. |
 | <a name="output_disk_space"></a> [disk\_space](#output\_disk\_space) | The disk space of the service, possible values depend on the service type, the cloud provider and the project. |

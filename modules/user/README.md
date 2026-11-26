@@ -1,5 +1,7 @@
 # Aiven Redis User Terraform module
 
+> **Deprecated:** This submodule is part of the final release of `terraform-aiven-redis`. Aiven provider 4.56.0 removes the `aiven_redis_user` resource. Use a compatible provider version `>= 4.55.2, < 4.56.0`. There is no automatic Redis-to-Valkey migration.
+
 ## Usage
 
 ```hcl
@@ -14,15 +16,15 @@ module "redis_user" {
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.0.0, < 5.0.0 |
+| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.55.2, < 4.56.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
-| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 3.4.0 |
+| ---- | ------- |
+| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 4.55.2 |
 
 ## Modules
 
@@ -31,17 +33,17 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aiven_redis_user.this](https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/redis_user) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_create"></a> [create](#input\_create) | Controls if resources should be created. | `bool` | `true` | no |
 | <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name. | `string` | n/a | yes |
 | <a name="input_redis_acl_categories"></a> [redis\_acl\_categories](#input\_redis\_acl\_categories) | Defines command category rules. | `list(string)` | `[]` | no |
-| <a name="input_redis_acl_channels"></a> [redis\_acl\_channels](#input\_redis\_acl\_channels) | Defines the permitted pub/sub channel patterns. | `list(string)` | <pre>[<br>  "*"<br>]</pre> | no |
+| <a name="input_redis_acl_channels"></a> [redis\_acl\_channels](#input\_redis\_acl\_channels) | Defines the permitted pub/sub channel patterns. | `list(string)` | <pre>[<br/>  "*"<br/>]</pre> | no |
 | <a name="input_redis_acl_commands"></a> [redis\_acl\_commands](#input\_redis\_acl\_commands) | Defines rules for individual commands. | `list(string)` | `[]` | no |
 | <a name="input_redis_acl_keys"></a> [redis\_acl\_keys](#input\_redis\_acl\_keys) | Defines key access rules. | `list(string)` | `[]` | no |
 | <a name="input_service_name"></a> [service\_name](#input\_service\_name) | Specifies the actual name of the service. | `string` | n/a | yes |
@@ -50,7 +52,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_id"></a> [id](#output\_id) | The ID of this resource. |
 | <a name="output_password"></a> [password](#output\_password) | The password of the Redis User. |
 | <a name="output_project"></a> [project](#output\_project) | Identifies the project this resource belongs to. |
