@@ -7,8 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2026-11-26
+
 ### Deprecated
-- Prepare the final Redis module release and cap Aiven provider support at `< 4.56.0`, where the Redis resources are removed.
+- **Final release:** mark the Redis module as deprecated and cap Aiven provider support at `>= 4.55.2, < 4.56.0`, where the Redis resources are removed.
 - Document that Redis-to-Valkey migration is not provided and requires a separate migration plan.
 
 ## [2.0.0] - 2023-03-28
@@ -66,7 +68,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release of the Aiven Redis Terraform module.
 
-[Unreleased]: https://github.com/tf-cloud-modules/terraform-aiven-redis/compare/2.0.0...HEAD
+[Unreleased]: https://github.com/tf-cloud-modules/terraform-aiven-redis/compare/2.0.1...HEAD
+[2.0.1]: https://github.com/tf-cloud-modules/terraform-aiven-redis/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/tf-cloud-modules/terraform-aiven-redis/compare/1.0.4...2.0.0
 [1.0.4]: https://github.com/tf-cloud-modules/terraform-aiven-redis/compare/1.0.3...1.0.4
 [1.0.3]: https://github.com/tf-cloud-modules/terraform-aiven-redis/compare/1.0.2...1.0.3
