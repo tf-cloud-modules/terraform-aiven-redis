@@ -2,6 +2,8 @@
 
 This document describes the current status of this project.
 
+> **Deprecated:** This module is archived after release 2.0.1. It supports Aiven provider versions `>= 4.55.2, < 4.56.0`; provider 4.56.0 removes the Redis resources. No Redis-to-Valkey migration is planned in this repository.
+
 
 | Status | Goal | Labels | 
 | :---: | :--- | --- | 
